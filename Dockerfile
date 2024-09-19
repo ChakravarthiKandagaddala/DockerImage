@@ -1,5 +1,5 @@
-FROM ubuntu:latest
-WORKDIR /app
-RUN apt-get update && apt-get install -y apache2
+FROM python:2.7
+WORKDIR ./
+COPY index.html .
 EXPOSE 80
-CMD [ "apachectl","-D","FOREGROUND" ]
+CMD [ "python","-m","SimpleHTTPServer 80" ]
